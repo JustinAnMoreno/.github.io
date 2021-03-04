@@ -63,17 +63,17 @@ function handleSubmit(evt) {
 //  },
 //  {}]
   //artist info
-//   $.ajax(getInfo + artist + myKey).then(function (data) {
-//     console.log(data.artist.bio.summary);
-//     console.log(data.artist.name);
-//     console.log(data.artist.stats.listeners);
-//     console.log(data.artist.stats.playcount);
-//     artistInfo = data;
-//     $name.text(artistInfo.artist.name);
-//     $bio.empty().append(artistInfo.artist.bio.summary);
-//     $listeners.text(artistInfo.artist.stats.listeners);
-//     $playcount.text(artistInfo.artist.stats.playcount);
-//   });
+  $.ajax(getInfo + artist + myKey).then(function (data) {
+    console.log(data.artist.bio.summary);
+    console.log(data.artist.name);
+    console.log(data.artist.stats.listeners);
+    console.log(data.artist.stats.playcount);
+    artistInfo = data;
+    $name.text(artistInfo.artist.name);
+    $bio.empty().append(artistInfo.artist.bio.summary);
+    $listeners.text(artistInfo.artist.stats.listeners);
+    $playcount.text(artistInfo.artist.stats.playcount);
+  });
 
   // artist' top ranked albums
   $.ajax(topAlbums + artist + myKey).then(function (data) {
@@ -83,32 +83,32 @@ function handleSubmit(evt) {
     // console.log(albumData);
  });
     // details for artist top ranked albums
-    for (var j = 0; j < $albumName.length; j++)
+    for (var j = 0; j < $albumName.length; j++){
       $.ajax(
         albumInfo + artist + "&album=" + albumData[4].Name + "&format=json").then(function (data) 
             { 
         albumData.push({'Published': data.album.wiki.published});
         albumData.push({'Summary': data.album.wiki.summary});
         albumData.push({'Image': data.album.image[2]});
-      });
-    console.log(albumData);
+      });  
  }
+console.log(albumData);
 
   //similar artists
-//   $.ajax(similarArtist + artist + myKey).then(function (data) {
-//     for (var u = 0; u < data.similarartists.artist.length; u++) {
-//       $similarArtists.push(data.similarartists.artist[u].name);
-//     }
-//     console.log($similarArtists);
-    //  $('.similar_artist_name').text(similarArtists)
-//   });
+  $.ajax(similarArtist + artist + myKey).then(function (data) {
+    for (var u = 0; u < data.similarartists.artist.length; u++) {
+      similarArtists.push(data.similarartists.artist[u].name);
+    }
+    console.log(similarArtists);
+     $('.similar_artist_name').text(similarArtists)
+  });
 
   //artist images/socials
-//   $.ajax(artistExtras + artist).then(function (data) {
-//     // console.log(data.artists[0].strArtistThumb);
-//     // console.log(data.artists[0].strTwitter);
-//     // console.log(data.artists[0].strWebsite);
-//     // console.log(data.artists[0].strFacebook);
-//     $artist_image.empty().attr("src", data.artists[0].strArtistThumb);
-//   });
-
+  $.ajax(artistExtras + artist).then(function (data) {
+    console.log(data.artists[0].strArtistThumb);
+    console.log(data.artists[0].strTwitter);
+    console.log(data.artists[0].strWebsite);
+    console.log(data.artists[0].strFacebook);
+    $artist_image.empty().attr("src", data.artists[0].strArtistThumb);
+  });
+}

@@ -6,8 +6,19 @@
 
 body {
     background-color: rgb(235, 218, 195);
+    font-family: helvetica;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-.title {
-    text-align: center;
+.main_card {
+    display: flex;
+    flex-direction: row;
+}
+
+.album_card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
