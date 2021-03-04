@@ -97,10 +97,13 @@ console.log(albumData);
   //similar artists
   $.ajax(similarArtist + artist + myKey).then(function (data) {
     for (var u = 0; u < data.similarartists.artist.length; u++) {
-      similarArtists.push(data.similarartists.artist[u].name);
+      similarArtists.push({'SimilarArtist': data.similarartists.artist[u].name});
     }
-    console.log(similarArtists);
-     $('.similar_artist_name').text(similarArtists)
+    
+    for (var h = 0; h < similarArtist.length; h++ ) {
+    // console.log(similarArtists);
+     $('.similar_artist_name').text(similarArtists.SimilarArtist)
+    };
   });
 
   //artist images/socials

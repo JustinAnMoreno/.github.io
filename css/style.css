@@ -10,6 +10,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    padding: 30px;
 }
 
 .main_card {
@@ -22,3 +23,19 @@ body {
     flex-direction: row;
     justify-content: space-between;
 }
+
+.main_image{
+    width: 70%;
+    height: 70%;
+}
+
+.bio {
+    word-wrap: break-word;
+    width: 500px;
+ }
+
+ .stats {
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+ }
