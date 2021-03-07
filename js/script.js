@@ -35,9 +35,9 @@ const $listeners = $(".listeners");
 const $playcount = $(".playcount");
 let $artist_image = $(".main_image");
 //socials
-const $twitter = $(".twitter");
-const $facebook = $(".facebook");
-const $website = $(".website");
+let $twitter = $(".twitter");
+let $facebook = $(".facebook");
+let $website = $(".website");
 //Similar Artists
 //Top Albums
 let $album_image0 = $(".album_image1");
@@ -47,7 +47,6 @@ let $album_image3 = $(".album_image4");
 let $album_image4 = $(".album_image5");
 let $album_image5 = $(".album_image6");
 
-
 //event listener
 $("form").on("submit", handleSubmit);
 
@@ -55,7 +54,7 @@ $("form").on("submit", handleSubmit);
 function handleSubmit(evt) {
   evt.preventDefault();
   const artist = $input.val();
- let albumData = [];
+  let albumData = [];
   similarArtists = [];
 
   $.ajax(getInfo + artist + myKey).then(function (data) {
@@ -73,8 +72,11 @@ function handleSubmit(evt) {
   // artist' top ranked albums
   $.ajax(topAlbums + artist + myKey).then(function (data) {
     for (var i = 0; i < data.topalbums.album.length; i++) {
-      albumData.push({'Name': data.topalbums.album[i].name});
+      albumData.push({ Name: data.topalbums.album[i].name });
     }
+
+
+    
     console.log(data);
     // $album_image0.empty().attr("src", data.topalbums.album[0].image[2].#text);
     // $album_image1.empty().attr("src", data.topalbums.album[1].image[2].#text);
@@ -82,11 +84,9 @@ function handleSubmit(evt) {
     // $album_image3.empty().attr("src", data.topalbums.album[3].image[2].#text);
     // $album_image4.empty().attr("src", data.topalbums.album[4].image[2].#text);
     // $album_image5.empty().attr("src", data.topalbums.album[5].image[2].#text);
- });
-  
-console.log(albumData);
+  });
 
-
+  console.log(albumData);
 
   //artist images/socials
   $.ajax(artistExtras + artist).then(function (data) {
