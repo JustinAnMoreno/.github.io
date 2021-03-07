@@ -1,41 +1,113 @@
 /* style reset */
+
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo+Black&display=swap');
 * {
-    box-sizing: border-box;
-    margin: 0;
+  box-sizing: border-box;
+  margin: 0;
 }
 
 body {
-    background-color: rgb(235, 218, 195);
-    font-family: helvetica;
-    min-height: 100vh;
+  background-color: rgb(235, 218, 195);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.title {
     display: flex;
-    flex-direction: column;
-    padding: 30px;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    margin-left: 5px;
+}
+
+.main_title {
+    color: tomato;
+    margin-top: 55px;
+    margin-left: 30px;
+    font-size: 50px;
+    font-family: 'Alfa Slab One', cursive ,helvetica;
+    font-weight: lighter;
+    letter-spacing: 3px;
+}
+
+.sub_title {
+    font-family: 'Alfa Slab One', cursive;
+    font-family: 'Archivo Black', sans-serif;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    margin-top: 20px;
+}
+.site_image {
+    width: 150px;
 }
 
 .main_card {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid black;
+  background-color: blanchedalmond;
+  
 }
 
 .album_card {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  box-shadow: black;
+
 }
 
-.main_image{
-    width: 70%;
-    height: 70%;
+.main_image {
+  width: 300px;
+  border: 10px solid whitesmoke;
 }
 
 .bio {
-    word-wrap: break-word;
-    width: 500px;
- }
+  word-wrap: break-word;
+  width: 600px;
+  
+}
 
- .stats {
-     display: flex;
-     flex-direction: row;
-     align-items: center;
- }
+.artist_bio {
+  margin-left: 50px;
+  margin-top: 30px;
+}
+
+.name {
+    margin-left: 
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-right: 150px;
+}
+
+.top_albums {
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+.top_album_header {
+    margin-left: 350px;
+}
+
+.similar_images {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-left: 350px;
+}
+
+form {
+  margin: 20px 0;
+}
+
+label {
+  margin-right: 20px;
+}
+
+
