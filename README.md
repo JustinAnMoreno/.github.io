@@ -14,7 +14,7 @@
 -[AudioDB](https://theaudiodb.com/api_guide.php)
 
 ## Getting Started 
-    [Click](#) here to launch app!
+    [Click](https://justinanmoreno.github.io/Hall-Of-Music-/) here to launch app!
 On app load - enter your artist of choice into the input/search bar. Once the text is submitted by user a image and description of your chosen artist will appear on screen.
 
 
