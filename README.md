@@ -15,7 +15,7 @@
 
 ## Getting Started 
 -[Click](https://justinanmoreno.github.io/Hall-Of-Music-/) to launch app!
-On app load - enter your artist of choice into the input/search bar. Once the text is submitted by user a image and description of your chosen artist will appear on screen.
+On app load - enter your artist of choice into the input/search bar. Once the text is submitted, an image and description of your chosen artist will appear on screen.
 
 
 
